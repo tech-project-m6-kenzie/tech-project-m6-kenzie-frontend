@@ -116,7 +116,7 @@ export const UserProfile = () => {
                             setEditingPhoneId(null);
                             setEditedPhone(null);
                           }}
-                          className="btn-edit"
+                          className="salvar"
                         >
                           Salvar
                         </button>
@@ -139,7 +139,7 @@ export const UserProfile = () => {
                             </button>
                             <button
                               onClick={() =>
-                                handleDeleteTelefone(user.id, telefone.id)
+                                handleDeleteTelefone(telefone.id, user.id, "user" )
                               }
                               className="btn-delete"
                             >
@@ -152,11 +152,11 @@ export const UserProfile = () => {
                   </div>
                 ))}
               </div>
-              <p>
-                <strong>Conta criada:</strong> {formatDate(user.createdAt)}
+              <p className="dados-da-conta">
+               Conta criada:{formatDate(user.createdAt)}
               </p>
-              <p>
-                <strong>Última atualização:</strong>{" "}
+              <p className="dados-da-conta">
+                Última atualização:{" "}
                 {formatDate(user.updatedAt)}
               </p>
               <div className="containerBtn">
@@ -216,9 +216,9 @@ export const UserProfile = () => {
                   handleUpdateUser(user.id, editedUser);
                   setEditing(false);
                 }}
-                className="btn-save"
+                className="salvar"
               >
-                Salvar
+                Salvar atualização de dados 
               </button>
             </div>
           )}

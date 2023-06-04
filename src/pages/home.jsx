@@ -7,11 +7,7 @@ import { FaReact } from "react-icons/fa";
 import {
   SiTypescript,
   SiNodedotjs,
-  SiPython,
-  SiJest,
-  SiRedux,
   SiPostgresql,
-  SiDjango,
 } from "react-icons/si";
 
 import { UserRegisterForm } from "../components/UserRegisterForm/UserRegisterFormComp";

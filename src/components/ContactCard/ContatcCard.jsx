@@ -178,7 +178,7 @@ export const ContactCard = () => {
                         </button>
                         <button
                           onClick={() =>
-                            handleDeleteTelefone(telefone.id, contact.id)
+                            handleDeleteTelefone(telefone.id, contact.id, "contato")
                           }
                           className="btn-delete"
                         >

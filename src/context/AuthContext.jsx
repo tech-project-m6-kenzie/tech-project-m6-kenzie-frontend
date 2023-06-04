@@ -48,17 +48,18 @@ export const AuthProvider = ({ children }) => {
     fetchData();
   }, [isLogin, contactList]);
 
+
   const getUser = async () => {
     try {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      const response = await api.get("/users/user");
-
+      const response = await api.get(`/users/user`);
       return response.data;
     } catch (error) {
-      console.error("Erro ao obter o usuário", error);
-      return null;
+      console.error("Erro ao buscar o usuário", error);
     }
   };
+
+  
   const onSubmitLogin = async (data) => {
     setLoading(true);
     setTimeout(async () => {
@@ -119,8 +120,8 @@ export const AuthProvider = ({ children }) => {
   const handleUpdateUser = async (id, data) => {
     try {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      const response = await api.patch(`/users/${id}`, data);
-      const updatedUser = response.data;
+      await api.patch(`/users/${id}`, data);
+      const updatedUser = await getUser();
       setUser(updatedUser);
       setToastMessage("Usuário atualizado com sucesso!");
     } catch (error) {
@@ -219,18 +220,30 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const handleDeleteTelefone = async (Telefoneid, contactId) => {
+  const handleDeleteTelefone = async (Telefoneid, contactId, tipo) => {
     try {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       await api.delete(`/telefones/${Telefoneid}`);
-
-      const updatedContactList = contactList.filter(
-        (contact) => contact.id !== contactId
-      );
-
-      setContactList(updatedContactList);
+  
+      if (tipo === 'contato') {
+        const updatedContactList = contactList.map((contact) => {
+          if (contact.id === contactId) {
+            contact.telefones = contact.telefones.filter(
+              (telefone) => telefone.id !== Telefoneid
+            );
+          }
+          return contact;
+        });
+  
+        setContactList(updatedContactList);
+      } else if (tipo === 'user') {
+        const updatedUser = await getUser();
+      setUser(updatedUser);
+      setToastMessage("Telefone deletado com sucesso!");
+      }
+  
     } catch (error) {
-      alert("Ops! Algo deu errado ao deletar o contato!");
+      setToastMessage("Ops! Algo deu errado ao deletar o telefone!");
     }
   };
 

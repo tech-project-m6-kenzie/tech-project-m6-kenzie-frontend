@@ -4,10 +4,10 @@ export const ContainerUserProfile = styled.div`
 
  margin-top: 2em;
 display: flex;
-background-color: white;
 flex-direction: column;
 width: 80%;
 margin-left: 2em;
+padding: 2em;
 .perfil-title{
     display: flex;
    flex-direction: row;
@@ -46,6 +46,14 @@ h1{
     margin-top: 1em;
     font-size: 14px;
 
+}
+.user-details input{
+    border: 1px solid var(--rosa);
+    height: 16px;
+    padding: 10px;
+    width: 30%;
+    font-size: 10px;
+    margin-left: 1em;
 }
 
 .user-details strong{
@@ -116,5 +124,23 @@ h1{
 
 .novoNumero input:focus{
     border: 2px solid var(--azul-escuro);
+}
+
+.user-edit button{
+    background-color: var(--rosa-escuro);   
+    color: white;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.user-edit button:hover{
+    background-color: var(--azul-escuro);
+    color: white;
+}
+
+.dados-da-conta{
+    font-size: 10px;   
 }
 `

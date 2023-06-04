@@ -18,7 +18,7 @@ export const ContainerHeader = styled.div`
   }
 
   h1{
-    font-size: 1em;
+    font-size: 1.5em;
     color: white;
   }
 

@@ -26,18 +26,22 @@ ul{
     list-style: none;
     margin-top: 1em;
     flex-wrap: wrap;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: flex;    
+    justify-content: flex-start;
     flex-direction: column;
-    border-top: solid 4px var(--azul-escuro);   
+    border-top: solid 4px var(--azul-escuro); 
+    background-color: var(--bg);  
+    padding: 1em;
+    min-width: 150px;
 }
 li{
     margin-top: 1em;
     background-color: white;
     font-size: 12px;
     padding: 10px;
-    border-top: solid 1px var(--azul-claro);
+    border-top: solid 1px var(--azul-claro);   
+     
 }
 
 strong{
