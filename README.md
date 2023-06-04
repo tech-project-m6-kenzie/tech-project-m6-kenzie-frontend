@@ -1,8 +1,8 @@
 # ContactEase
 
+## Projeto Front-end
 Um aplicativo de gerenciamento de contatos organiza e armazena informações de contato de forma conveniente. Ele simplifica a adição, edição e visualização de detalhes como nome, telefone e e-mail. Essa ferramenta centraliza e melhora a eficiência na comunicação pessoal e profissional.
 
-## Projeto Front-end
 
 ## Tecnologias Utilizada
 
@@ -17,3 +17,8 @@ Um aplicativo de gerenciamento de contatos organiza e armazena informações de 
 
    
 </div></br>
+
+### Observação: 
+Ao executar a aplicação front-end na porta local 3000 e o back-end na porta local 5000, após criar as tabelas no banco de dados, você poderá aproveitar o funcionamento completo do sistema. Isso é possível graças ao uso do cors() no back-end, que permite a comunicação entre os dois servidores, mesmo estando em diferentes portas. Dessa forma, você pode realizar requisições entre a aplicação front-end e o back-end sem problemas de política de mesma origem, garantindo uma experiência integrada e eficiente.
+
+### Para saber mais conferir o repositório do back end <a href="https://github.com/tech-project-m6-kenzie/tech-project-m6-kenzie-backend">Clique Aqui!</a>
