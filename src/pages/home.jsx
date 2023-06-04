@@ -2,13 +2,26 @@ import { useContext } from "react";
 
 import { HeaderComp } from "../components/Header/HeaderComp";
 import { MainRender } from "../components/MainRender/MainRender";
+import { IoLogoJavascript, IoLogoHtml5, IoLogoCss3 } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNodedotjs,
+  SiPython,
+  SiJest,
+  SiRedux,
+  SiPostgresql,
+  SiDjango,
+} from "react-icons/si";
 
 import { UserRegisterForm } from "../components/UserRegisterForm/UserRegisterFormComp";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "../components/ModalComp/Modal";
 import { Avatar } from "../components/avatarComp/avatarComp";
 import { LoginForm } from "../components/loginForm/loginForm";
-import Banner from "../components/Banner/bannercomp";
+import front from "../../src/Assests/img/anima/front.png"
+import back from "../../src/Assests/img/anima/back.png"
+import plan from "../../src/Assests/img/anima/plan.png"
 import Footermain from "../components/footer";
 
 function Home() {
@@ -33,7 +46,7 @@ function Home() {
         </div>
         <div className="container-text-home">
           <div className="container-news">
-            <img src="" alt="" />
+            <img src={plan} alt="" />
             <h2>Sobre a aplicação:</h2>
             <p>
               Um aplicativo de gerenciamento de contatos organiza e armazena
@@ -43,8 +56,9 @@ function Home() {
               comunicação pessoal e profissional.
             </p>
           </div>
+         
           <div className="container-news">
-            <img src="" alt="" />
+            <img src={front} alt="" />
             <h2>Desenvolvimento do Front:</h2>
             <p>
               O front-end foi desenvolvido utilizando o Javascript como linguagem de programação, juntamente com o framework React e
@@ -54,9 +68,17 @@ function Home() {
               práticas de desenvolvimento, utilizando Yarn como gerenciador de
               pacotes.
             </p>
+            <div className="container-tecnologias">
+              <span> <IoLogoJavascript/></span>
+              <span> <IoLogoHtml5/></span>
+              <span><IoLogoCss3/></span>
+              <span> <FaReact/></span>
+          
+            </div>
           </div>
+         
           <div className="container-news">
-            <img src="" alt="" />
+            <img src={back} alt="" />
             <h2>Desenvolvimento do Back:</h2>
             <p>
               O desenvolvimento do back-end foi realizado utilizando o
@@ -69,9 +91,16 @@ function Home() {
               mesma origem, dotenv para gerenciar variáveis de ambiente, e
               swagger-jsdoc e swagger-ui-express para documentação da API. 
             </p>
+            <div className="container-tecnologias">
+              <span> <SiTypescript/></span>
+              <span>   <SiNodedotjs/></span>
+              <span> <SiPostgresql/> </span>
+       
+            </div>
           </div>
+         
         </div>
-      <Banner/>
+     
       </MainRender>
 
       {modalState !== "none" && (
